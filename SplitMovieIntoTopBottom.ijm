@@ -1,10 +1,13 @@
-makeRectangle(0, 0, 512, 256);
+img = getTitle();
+width = getWidth;
+height = getHeight;
+
+makeRectangle(0, 0, width, height/2);
 roiManager("Add");
-makeRectangle(0, 256, 512, 256);
+makeRectangle(0, height/2, width, height/2);
 roiManager("Add");
 
 count = roiManager("Count");
-img = getTitle();
 
 for (i = 0; i < count; i ++){
 	selectWindow(img);
@@ -13,6 +16,7 @@ for (i = 0; i < count; i ++){
 }
 
 for (i = 0; i < count; i ++){
-
 	roiManager("Delete");
 }
+
+print("Split movie: " + img);
